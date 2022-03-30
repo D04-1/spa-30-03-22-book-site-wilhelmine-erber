@@ -38,9 +38,13 @@ const changePositionAuthorName = (str) =>{
 }
 
 // sortieren Author Nachnamen
-const sortAuhorNames = () => {
-  
-}
+books.sort((a, b) => {
+  const surnameA = changePositionAuthorName(a.author);
+  const surnameB = changePositionAuthorName(b.author);
+  // See: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/localeCompare
+  return surnameA.localeCompare(surnameB);
+});
+
 
 for(book of books){
  // neues li erstellen
